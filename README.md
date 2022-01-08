@@ -36,9 +36,10 @@ git push origin <branch_name>
 
 ## Current Winter-Project Members
 
-1.Palak Sharma- palaksharma12
-2.Janani Senthil- janani-jss2002
-3.Shashwat Sharma- shashwat11152
-4.Shubham Shukla- Shubh-Xmate
-5.Chaetenya Sharma- Chaetenya-Sharma
-6.Shalu Chaprana- Shalu-cod
+1. [Palak Sharma](https://github.com/palaksharma12)
+2. [Janani Senthil](https://github.com/janani-jss2002)
+3. [Shashwat Sharma](https://github.com/shashwat11152)
+4. [Shubham Shukla](https://github.com/Shubh-Xmate)
+5. [Chaetenya Sharma](https://github.com/Chaetenya-Sharma)
+6. [Shalu Chaprana](https://github.com/Shalu-cod)
+7. [Ankit](https://github.com/ankit3002)
