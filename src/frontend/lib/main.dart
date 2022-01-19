@@ -17,58 +17,32 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final variable = Card(
-    shadowColor: Colors.brown,
-    clipBehavior: Clip.antiAlias,
-    elevation: 8,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(5),
-    ),
-    child: Container(
+  bool _isFavorited = false;
 
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xff00A8A8),Color(0xff0C6980)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Intro to the Programming',
-          style:TextStyle(color:Colors.white,fontSize: 20),
-          ),
-          SizedBox(height: 30,),
+  void _toggleFavorite()
+  {
+    setState(() {
+      if(_isFavorited == true)
+      {
+        _isFavorited = false;
+        print('false');
+      }
+      else{
+        _isFavorited = true;
+        print('true');
+      }
+    });
+  }
 
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Colors.white,
 
-            ),
-          ),
 
-          SizedBox(height: 20,),
-          Text('Venue: Google Meet',
-          style: TextStyle(
-            fontSize:15,color: Colors.white
-          ),
-          ),
-          SizedBox(height: 10,),
-          Text('Host: Programming Club',
-            style: TextStyle(
-                fontSize:15,color: Colors.white
-            ),
-          ),
-          SizedBox(height: 10,),
 
-        ],
-      ),
-    ),
-  );
+
+  
+
+
+
+
 
 
 
@@ -150,23 +124,166 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
+
+                // 1st tile
                 Container(
-                  child: variable,
+                  child: Card(
+                    shadowColor: Colors.brown,
+                    clipBehavior: Clip.antiAlias,
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Container(
+
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xff008080),Color(0xff008080)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                      ),
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Intro to the Programming',
+                            style:TextStyle(color:Colors.white,fontSize: 20),
+                          ),
+                          SizedBox(height: 30,),
+
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.white,
+
+                            ),
+                          ),
+
+                          SizedBox(height: 20,),
+                          Row(children:[Text('Venue: Google Meet',
+                            style: TextStyle(
+                                fontSize:15,color: Colors.white
+                            ),
+                          ),
+                            SizedBox(width: 80,),
+                            IconButton(
+
+                              icon: (_isFavorited
+                                  ?  Icon(Icons.star_rounded,
+                                size: 40,
+                                color: Colors.amber,
+                              )
+
+                                  :  Icon(
+                                Icons.star_rounded,
+                                size: 40,
+                                color: Colors.white,
+
+                              )
+                              ),
+                              onPressed: _toggleFavorite,
+                            ),
+                          ]),
+
+
+                          SizedBox(height: 10,),
+                          Text('Host: Programming Club',
+                            style: TextStyle(
+                                fontSize:15,color: Colors.white
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
 
-                Icon(
-                  Icons.star_border_rounded,
-                  size: 80,
-                  color: Colors.amber,
-                ),
-                Icon(
-                  Icons.star_rounded,
-                  size: 80,
-                  color: Colors.amber,
-                ),
 
-                IconButton(onPressed: ,
-                    icon: Icons.star)
+              SizedBox(height: 30,),
+
+              // 2nd tile
+                Container(
+                  child: Card(
+                    shadowColor: Colors.brown,
+                    clipBehavior: Clip.antiAlias,
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Container(
+
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xff483C32),Color(0xff483C32)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                      ),
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Intro to the Programming',
+                            style:TextStyle(color:Colors.white,fontSize: 20),
+                          ),
+                          SizedBox(height: 30,),
+
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.white,
+
+                            ),
+                          ),
+
+                          SizedBox(height: 20,),
+                          Row(children:[Text('Venue: Google Meet',
+                            style: TextStyle(
+                                fontSize:15,color: Colors.white
+                            ),
+                          ),
+                            SizedBox(width: 80,),
+                            IconButton(
+
+                              icon: (_isFavorited
+                                  ?  Icon(Icons.star_rounded,
+                                size: 40,
+                                color: Colors.amber,
+                              )
+
+                                  :  Icon(
+                                Icons.star_rounded,
+                                size: 40,
+                                color: Colors.white,
+
+                              )
+                              ),
+                              onPressed: _toggleFavorite,
+                            ),
+                          ]),
+
+
+                          SizedBox(height: 10,),
+                          Text('Host: Programming Club',
+                            style: TextStyle(
+                                fontSize:15,color: Colors.white
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+        
+
+
                 ],
                 ),
                 ),
