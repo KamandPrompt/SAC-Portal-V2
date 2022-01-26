@@ -37,18 +37,6 @@ class _HomeState extends State<Home> {
 
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -212,7 +200,7 @@ class _HomeState extends State<Home> {
                     clipBehavior: Clip.antiAlias,
                     elevation: 8,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Container(
 
@@ -227,7 +215,7 @@ class _HomeState extends State<Home> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Intro to the Programming',
+                          Text('Intro to the Design ',
                             style:TextStyle(color:Colors.white,fontSize: 20),
                           ),
                           SizedBox(height: 30,),
