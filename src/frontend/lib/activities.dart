@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 
 void main()
 {
-
-  runApp(MaterialApp(
-    home: activities(),
-  ),);
+  runApp(activities());
 }
 
 class activities extends StatefulWidget {
@@ -22,7 +19,8 @@ class _HomeState extends State<activities> {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      home: Scaffold(
       body: SafeArea(
         child: Container(
           child: Column(
@@ -91,12 +89,13 @@ class _HomeState extends State<activities> {
 
       ),
       )
+    )
+
     );
-
-
-
   }
 }
+
+
 
 // tile class declaration 
 
