@@ -59,9 +59,11 @@ class _HomeState extends State<activities> {
 
           // from here add things in scroll view
 
-          Container(
-            margin: EdgeInsets.fromLTRB(40, 0, 0, 0),
-            height: 518,
+          Expanded(
+           // margin: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+            
+           // height: 518,
+            
             child:ListView(
 
                   children: [
@@ -71,13 +73,14 @@ class _HomeState extends State<activities> {
 
             // 1st tile
             tile(),
+           
 
             // 2nd tile
-            tile(),
 
-            // 3rd tile
             tile(),
-        
+            date_text('27','Thursday','01','22'),
+            tile(), tile(),
+            
                 ],
 
                 ),
@@ -131,68 +134,56 @@ class _tileState extends State<tile> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-                      
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.fromLTRB(0, 0, 0, 70),
-                            child: Column(
-                            
-                              children: [
-                                Text('09:00',
-                                style: TextStyle(fontWeight: FontWeight.bold,fontSize:23.0,color: Colors.grey, ),
-                                ),
-                                Text('10:00',
-                                style: TextStyle(fontSize:23.0,color: Colors.grey, ),
-                                ),
-                              ],
-                          ),
-                          ),
-                          SizedBox(width: 10,),
-                          Card(
-                            //margin: EdgeInsets.fromLTRB(0, 0, 80, 0),
-                        shadowColor: Colors.brown,
-                        clipBehavior: Clip.antiAlias,
-                        elevation: 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Container(
-                          
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Color(0xff008080),Color(0xff008080)],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                          ),
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Intro to the Programming',
-                                style:TextStyle(color:Colors.white,fontSize: 20),
-                              ),
-                              SizedBox(height: 30,),
+    return Padding(
+        padding: const EdgeInsets.fromLTRB(80.0, 20, 30.0, 40),
+        child: Column(
+          
+          children: <Widget>[
+            
+           
+            Container(
+              
+              
+              padding: EdgeInsets.fromLTRB(5, 10, 4, 0),
+              decoration: BoxDecoration(
+                boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.5),
+        spreadRadius: 2,
+        blurRadius: 7,
+        offset: Offset(2, 3), //changes position of shadow
+      ),
+    ],
+                color:Color(0xff008080),
+                borderRadius: BorderRadius.all(
+                Radius.circular(24.0),
+              ),
+              ),
+              child:Column(children: [
+                // Title 
+                Container(  
+                  padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
+                      child:
+                      Align(alignment:Alignment.topLeft,
+                      child: Text(
+              'Intro to the Programming',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 23.0,
+                
+                
+              ),
+            ) , ) 
+                    ),
+               
+                
 
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: Icon(
-                                  Icons.arrow_forward_ios_rounded,
-                                  color: Colors.white,
-
-                                ),
-                              ),
-
-                              SizedBox(height: 20,),
-                              Row(children:[Text('Venue: Google Meet',
-                                style: TextStyle(
-                                    fontSize:15,color: Colors.white
-                                ),
-                              ),
-                                SizedBox(width: 80,),
-                                IconButton(
+           SizedBox(height: 15,),
+           Row(children:[
+             SizedBox(width: 30,),
+             //star 
+             IconButton(
 
                                   icon: (_isFavorited
                                       ?  Icon(Icons.star_rounded,
@@ -209,29 +200,60 @@ class _tileState extends State<tile> {
                                   ),
                                   onPressed: _toggleFavorite,
                                 ),
+
+             SizedBox(width: 160,),
+             // forward icon 
+             Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.white,
+                  size: 50,
+
+                      ),
+
                               ]),
 
-
-                              SizedBox(height: 10,),
-                              Text('Host: Programming Club',
+                    SizedBox(height: 15,),
+                    // Venue is mentioned
+                    Container(  
+                      padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
+                      child:
+                      Align(alignment:Alignment.topLeft,
+                      child: Text('Venue: Google meet',
                                 style: TextStyle(
-                                    fontSize:15,color: Colors.white
+                                    fontSize:19,color: Colors.white,
+                                    
                                 ),
-                              ),
-                              SizedBox(height: 10,),
+                              ) , ) 
+                    ),
+                    // host is mentioned
+                    Container(
+                      padding: EdgeInsets.fromLTRB(4, 4, 4, 0),
+                      child:
+                      Align(alignment:Alignment.topLeft,
+                      child: Text('Host: Programming Club',
+                                style: TextStyle(
+                                    fontSize:19,color: Colors.white,
+                                    
+                                    
+                                ),
+                              ),) 
+                    ),
 
-                            ],
-                          ),
-                        ),
+                              
+                              SizedBox(height:20),
 
-                      ),
-                        ],
-                      ),
+              ],) 
+            ),
 
-                    );
+          ],
+        ),
+      
+ 
+    );
   }
 }
 
+// date widget
 class date_text extends StatelessWidget {
 
   date_text(this.date , this.week , this.month , this.year){}
@@ -244,7 +266,7 @@ class date_text extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-              margin: EdgeInsets.fromLTRB(200, 0, 10 ,0),
+              margin: EdgeInsets.fromLTRB(240, 30, 10 ,0),
               child: Row(
                 children: [
                   Column(
@@ -281,3 +303,5 @@ class date_text extends StatelessWidget {
             );
   }
 }
+
+
