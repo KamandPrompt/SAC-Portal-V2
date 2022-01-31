@@ -1,12 +1,12 @@
-import 'package:collapsible_navigation_drawer_example/data/drawer_items.dart';
-import 'package:collapsible_navigation_drawer_example/model/drawer_item.dart';
-import 'package:collapsible_navigation_drawer_example/page/Music.dart';
-import 'package:collapsible_navigation_drawer_example/page/KamandPrompt.dart';
-import 'package:collapsible_navigation_drawer_example/page/STAC.dart';
-import 'package:collapsible_navigation_drawer_example/page/E-Cell.dart';
-import 'package:collapsible_navigation_drawer_example/page/UDC.dart';
-import 'package:collapsible_navigation_drawer_example/page/PMC.dart';
-import 'package:collapsible_navigation_drawer_example/provider/navigation_provider.dart';
+import 'package:frontend/data/drawer_items.dart';
+import 'package:frontend/model/drawer_item.dart';
+import 'package:frontend/page/Music.dart';
+import 'package:frontend/page/KamandPrompt.dart';
+import 'package:frontend/page/STAC.dart';
+import 'package:frontend/page/E-Cell.dart';
+import 'package:frontend/page/UDC.dart';
+import 'package:frontend/page/PMC.dart';
+import 'package:frontend/provider/navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,5 +1,5 @@
-import 'package:collapsible_navigation_drawer_example/provider/navigation_provider.dart';
-import 'package:collapsible_navigation_drawer_example/widget/navigation_drawer_widget.dart';
+import 'package:frontend/provider/navigation_provider.dart';
+import 'package:frontend/widget/navigation_drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

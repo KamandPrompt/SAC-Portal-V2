@@ -1,4 +1,4 @@
-import 'package:collapsible_navigation_drawer_example/model/drawer_item.dart';
+import 'package:frontend/model/drawer_item.dart';
 import 'package:flutter/material.dart';
 
 final itemsFirst = [
